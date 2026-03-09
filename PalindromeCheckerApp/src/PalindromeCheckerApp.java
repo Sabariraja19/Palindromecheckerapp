@@ -1,19 +1,24 @@
 public class PalindromeCheckerApp {
-    static void main() {
+
+    /**
+     * Application entry point for UC3.
+     * @param args Command-line arguments
+     */
+    public static void main(String[] args) {
+
+        // Hardcoded string
         String input = "madam";
 
-        boolean isPalindrome = true;
+        // Variable to store reversed string
+        String reversed = "";
 
-        for (int i = 0; i < input.length() / 2; i++) {
-
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Iterate the string in reverse order
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
         }
 
-
-        if (isPalindrome) {
+        // Compare original and reversed strings
+        if (input.equals(reversed)) {
             System.out.println(input + " is a Palindrome.");
         } else {
             System.out.println(input + " is NOT a Palindrome.");
